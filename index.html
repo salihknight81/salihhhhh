@@ -182,16 +182,32 @@ function acVideo(videoDosya) {
 
 <style>
   
-  .solMenu{
-  position:fixed;
-  left:20px;
-  top:120px;
+  .menuler{
+  display:flex;
+  justify-content:space-between;
+  margin-top:40px;
+  padding:20px;
 }
 
-.sagMenu{
-  position:fixed;
-  right:20px;
-  top:120px;
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.yanKart{
+  border:2px solid white;
+  padding:15px;
+  width:140px;
+  cursor:pointer;
+  transition:0.3s;
+  background:black;
+  color:white;
+}
+
+.yanKart:hover{
+  background:white;
+  color:black;
 }
 
 .yanKart{
@@ -264,3 +280,39 @@ function acVideo(videoDosya) {
 </div>
 
   <body>
+
+  <div class="menuler">
+
+  <div class="menu">
+
+    <div class="yanKart" onclick="goster('resim3.jpg')">
+      Gizli Foto
+    </div>
+
+    <div class="yanKart" onclick="acVideo('video5.mp4')">
+      VHS
+    </div>
+
+    <div class="yanKart" onclick="goster('resim4.jpg')">
+      Meme
+    </div>
+
+  </div>
+
+  <div class="menu">
+
+    <div class="yanKart" onclick="acVideo('video6.mp4')">
+      Dans
+    </div>
+
+    <div class="yanKart" onclick="goster('resim5.jpg')">
+      Garip
+    </div>
+
+    <div class="yanKart" onclick="acVideo('video7.mp4')">
+      Final
+    </div>
+
+  </div>
+
+</div>
