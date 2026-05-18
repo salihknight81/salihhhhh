@@ -129,6 +129,30 @@ function goster(resim) {
 
 }
 
+<script>
+
+function goster(resim) {
+
+  let eski = document.querySelectorAll(".acilanFoto");
+
+  eski.forEach(f => f.remove());
+
+  let foto = document.createElement("img");
+
+  foto.src = resim;
+
+  foto.className = "acilanFoto";
+
+  foto.style.width = "400px";
+
+  foto.style.marginTop = "20px";
+
+  foto.style.border = "4px solid white";
+
+  document.body.appendChild(foto);
+
+}
+
 function acVideo(videoDosya) {
 
   let video = document.getElementById("video");
@@ -145,6 +169,10 @@ function acVideo(videoDosya) {
 
 }
 
+</script>
+
+</body>
+</html>
 
   </script>
 
