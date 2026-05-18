@@ -160,6 +160,14 @@ video{
   dansa gel
 </div>
 
+<div class="kart" onclick="acMuzik('muzik.mp3')">
+  MÜZİK AÇ
+</div>
+
+<audio id="muzik">
+  <source id="muzikSource" src="" type="audio/mp3">
+</audio>
+  
 <!-- VIDEO -->
 
 <video id="video" controls>
@@ -307,3 +315,24 @@ video{
 }
 
 </style>
+
+
+<script>
+
+function acMuzik(muzikDosya){
+
+  let muzik = document.getElementById("muzik");
+
+  let source = document.getElementById("muzikSource");
+
+  source.src = muzikDosya;
+
+  muzik.load();
+
+  muzik.play();
+
+}
+
+</script>
+
+</body>
