@@ -2,112 +2,180 @@
 <html lang="tr">
 
 <head>
-  <meta charset="UTF-8">
-  <title>SİYAHI MÜZESİ</title>
+<meta charset="UTF-8">
+<title>SİYAHI MÜZESİ</title>
 
-  <style>
-    body {
-      background: black;
-      color: white;
-      font-family: Arial;
-      text-align: center;
-      padding-top: 50px;
-    }
+<style>
 
-    .kart {
-      border: 2px solid white;
-      padding: 20px;
-      margin: 20px auto;
-      width: 300px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+body{
+  background:black;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding-top:50px;
+}
 
-    .kart:hover {
-      background: white;
-      color: black;
-    }
+/* ANA BUTONLAR */
 
-    img {
-      width: 400px;
-      margin-top: 20px;
-      border: 4px solid white;
-    }
+.kart{
+  border:2px solid white;
+  padding:20px;
+  margin:20px auto;
+  width:300px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    #foto {
-      display: none;
-    }
+.kart:hover{
+  background:white;
+  color:black;
+}
 
-    video {
-      width: 700px;
-      display: none;
-      margin-top: 20px;
-      border: 4px solid white;
-    }
+/* FOTO */
 
-    .insta {
-      width: 100px;
-      border: none;
-      transition: 0.3s;
-      margin-top: 30px;
-    }
+.acilanFoto{
+  width:400px;
+  margin-top:20px;
+  border:4px solid white;
+}
 
-    .insta:hover {
-      transform: scale(1.1);
-    }
-  </style>
+/* VIDEO */
+
+video{
+  width:700px;
+  display:none;
+  margin-top:20px;
+  border:4px solid white;
+}
+
+/* INSTAGRAM */
+
+.insta{
+  width:100px;
+  border:none;
+  transition:0.3s;
+  margin-top:30px;
+}
+
+.insta:hover{
+  transform:scale(1.1);
+}
+
+/* YAN MENULER */
+
+.solMenu{
+  position:fixed;
+  left:20px;
+  top:150px;
+}
+
+.sagMenu{
+  position:fixed;
+  right:20px;
+  top:150px;
+}
+
+.yanKart{
+  border:2px solid white;
+  padding:15px;
+  margin-bottom:15px;
+  width:150px;
+  cursor:pointer;
+  transition:0.3s;
+  background:black;
+  color:white;
+}
+
+.yanKart:hover{
+  background:white;
+  color:black;
+}
+
+</style>
 </head>
 
 <body>
 
-  <h1>SİYAHI MÜZESİ</h1>
+<h1>SİYAHI MÜZESİ</h1>
 
-  <div class="kart" onclick="goster('resim.jpg')">
-    Havli fotorag
+<!-- SOL MENU -->
+
+<div class="solMenu">
+
+  <div class="yanKart" onclick="goster('resim3.jpg')">
+    Gizli Foto
   </div>
 
-  <div class="kart" onclick="goster('resim2.jpg')">
-    Gang Sign
+  <div class="yanKart" onclick="acVideo('video5.mp4')">
+    VHS
   </div>
 
-  <img id="foto">
+  <div class="yanKart" onclick="goster('resim4.jpg')">
+    Meme
+  </div>
 
-  <br><br>
+</div>
+
+<!-- SAG MENU -->
+
+<div class="sagMenu">
+
+  <div class="yanKart" onclick="acVideo('video6.mp4')">
+    Dans
+  </div>
+
+  <div class="yanKart" onclick="goster('resim5.jpg')">
+    Garip
+  </div>
+
+  <div class="yanKart" onclick="acVideo('video7.mp4')">
+    Final
+  </div>
+
+</div>
+
+<!-- ANA BUTONLAR -->
+
+<div class="kart" onclick="goster('resim.jpg')">
+  Havli fotorag
+</div>
+
+<div class="kart" onclick="goster('resim2.jpg')">
+  Gang Sign
+</div>
 
 <div class="kart" onclick="acVideo('video.mp4')">
   Tıkla Pişmaniye olmazsın
 </div>
 
-<video id="video" controls>
-  <source id="videoSource" src="" type="video/mp4">
-</video>
-  
 <div class="kart" onclick="acVideo('video2.mp4')">
   mega zencı
 </div>
-
 
 <div class="kart" onclick="acVideo('video3.mp4')">
   depresif
 </div>
 
-
-  
 <div class="kart" onclick="acVideo('video4.mp4')">
   dansa gel
 </div>
 
+<!-- VIDEO -->
 
-  <h1>EKLEMEMİ İSTEDİĞİN BİŞEY VARSA YAZ</h1>
+<video id="video" controls>
+  <source id="videoSource" src="" type="video/mp4">
+</video>
 
-  <a href="https://instagram.com/Salihhhkky" target="_blank">
-    <img class="insta"
-      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-  </a>
+<h1>EKLEMEMİ İSTEDİĞİN BİŞEY VARSA YAZ</h1>
+
+<a href="https://instagram.com/Salihhhkky" target="_blank">
+  <img class="insta"
+  src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+</a>
 
 <script>
 
-function goster(resim) {
+function goster(resim){
 
   let eski = document.querySelectorAll(".acilanFoto");
 
@@ -119,41 +187,11 @@ function goster(resim) {
 
   foto.className = "acilanFoto";
 
-  foto.style.width = "400px";
-
-  foto.style.marginTop = "20px";
-
-  foto.style.border = "4px solid white";
-
   document.body.appendChild(foto);
 
 }
 
-<script>
-
-function goster(resim) {
-
-  let eski = document.querySelectorAll(".acilanFoto");
-
-  eski.forEach(f => f.remove());
-
-  let foto = document.createElement("img");
-
-  foto.src = resim;
-
-  foto.className = "acilanFoto";
-
-  foto.style.width = "400px";
-
-  foto.style.marginTop = "20px";
-
-  foto.style.border = "4px solid white";
-
-  document.body.appendChild(foto);
-
-}
-
-function acVideo(videoDosya) {
+function acVideo(videoDosya){
 
   let video = document.getElementById("video");
 
@@ -173,77 +211,3 @@ function acVideo(videoDosya) {
 
 </body>
 </html>
-
-<body>
-
-<div class="menuler">
-
-  <div class="menu">
-
-    <div class="yanKart" onclick="goster('resim3.jpg')">
-      Gizli Foto
-    </div>
-
-    <div class="yanKart" onclick="acVideo('video5.mp4')">
-      VHS
-    </div>
-
-    <div class="yanKart" onclick="goster('resim4.jpg')">
-      Meme
-    </div>
-
-  </div>
-
-  <div class="menu">
-
-    <div class="yanKart" onclick="acVideo('video6.mp4')">
-      Dans
-    </div>
-
-    <div class="yanKart" onclick="goster('resim5.jpg')">
-      Garip
-    </div>
-
-    <div class="yanKart" onclick="acVideo('video7.mp4')">
-      Final
-    </div>
-
-  </div>
-
-</div>
-
-  <style>
-
-  body {
-    background: black;
-  }
-
-  .menuler{
-    display:flex;
-    justify-content:space-between;
-    margin-top:40px;
-    padding:20px;
-  }
-
-  .menu{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .yanKart{
-    border:2px solid white;
-    padding:15px;
-    width:140px;
-    cursor:pointer;
-    transition:0.3s;
-    background:black;
-    color:white;
-  }
-
-  .yanKart:hover{
-    background:white;
-    color:black;
-  }
-
-</style>
