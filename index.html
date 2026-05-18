@@ -117,12 +117,26 @@
 
 function goster(resim) {
 
-  let foto = document.getElementById("foto");
+  let eski = document.querySelectorAll(".acilanFoto");
+
+  eski.forEach(f => f.remove());
+
+  let foto = document.createElement("img");
 
   foto.src = resim;
 
-  foto.style.display = "block";
+  foto.className = "acilanFoto";
 
+  foto.style.width = "400px";
+
+  foto.style.marginTop = "20px";
+
+  foto.style.border = "4px solid white";
+
+  document.body.appendChild(foto);
+}
+
+  
 }
 
 function acVideo(videoDosya) {
@@ -139,8 +153,6 @@ function acVideo(videoDosya) {
 
 video.play();
   
-}
 
-</script>
 
 
